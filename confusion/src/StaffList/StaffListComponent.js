@@ -11,7 +11,7 @@ class StaffList extends Component {
       selected: null
     }
   }
-  onDishSelect(staff) {
+  onStaffSelect(staff) {
     console.log("staff", staff)
     
     this.setState({ selected: staff })
@@ -25,6 +25,7 @@ class StaffList extends Component {
         <Card>
           <CardBody>
             <CardTitle>Họ và tên: {staff.name}</CardTitle>
+            <CardImg src={ staff.image} alt={staff.name} />
             <CardText>Ngày sinh: {dateFormat(staff.doB, "dd/mm/yyyy")} </CardText>
             <CardText>Ngày vào công ty: {dateFormat(staff.startDate, "dd/mm/yyyy")}</CardText>
             <CardText>phòng ban: {staff.department.name}</CardText>
@@ -43,9 +44,8 @@ class StaffList extends Component {
       return (<>
         <div className="col-12 col-md-6 col-lg-4 item">
           <Card key={staff.id}
-            onClick={() => this.onDishSelect(staff)}>
+            onClick={() => this.onStaffSelect(staff)}>
             <CardTitle>{staff.name}</CardTitle>
-            <CardImg src={ staff.image} alt={staff.name} />
           </Card>
         </div>
         </>
