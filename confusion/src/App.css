@@ -2,10 +2,10 @@
     box-sizing: border-box;
 };
 .item {
-margin-bottom: 13%;
-border:black, 1px;
+margin-bottom: 2%;
+border:black, solid, 1px;
 };
-.change {
+.hiddenInfo {
     padding: 20px;
-    color:blue;
+    color:rgb(41, 32, 32);
 }
