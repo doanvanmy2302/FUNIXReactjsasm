@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {
-  Card, CardText, CardBody,CardImg,
+  Card, CardText, CardBody, CardImg,
   CardTitle
 } from 'reactstrap';
-import dateFormat from 'dateformat'; 
+import dateFormat from 'dateformat';
 class StaffList extends Component {
   constructor(props) {
     super(props);
@@ -13,19 +13,19 @@ class StaffList extends Component {
   }
   onStaffSelect(staff) {
     console.log("staff", staff)
-    
+
     this.setState({ selected: staff });
   }
   renderStaff(staff) {
 
     if (staff != null)
-      
-    
+
+
       return (
         <Card>
           <CardBody>
             <CardTitle>Họ và tên: {staff.name}</CardTitle>
-            <CardImg src={ staff.image} alt={staff.name} />
+            <CardImg src={staff.image} alt={staff.name} />
             <CardText>Ngày sinh: {dateFormat(staff.doB, "dd/mm/yyyy")} </CardText>
             <CardText>Ngày vào công ty: {dateFormat(staff.startDate, "dd/mm/yyyy")}</CardText>
             <CardText>phòng ban: {staff.department.name}</CardText>
@@ -33,7 +33,7 @@ class StaffList extends Component {
             <CardText>Số ngày đã làm thêm:{staff.overTime}</CardText>
           </CardBody>
         </Card>
-          );
+      );
     else
       return (
         <div></div>
@@ -41,21 +41,21 @@ class StaffList extends Component {
   }
 
   renderHeader() {
-    if(this.state.selected === null) {
+    if (this.state.selected === null) {
       return (
         <div className='hiddenInfo'>
-              <CardTitle> Bấm vào nhân viên để xem thông tin.</CardTitle>
+          <CardTitle> Bấm vào nhân viên để xem thông tin.</CardTitle>
         </div>
       );
     }
-      else {
+    else {
       return (
         <div>
-            
+
         </div>
       );
     }
-    
+
   }
   render() {
     const menu = this.props.staffs.map((staff) => {
@@ -66,7 +66,7 @@ class StaffList extends Component {
             <CardTitle>{staff.name}</CardTitle>
           </Card>
         </div>
-        </>
+      </>
       );
     });
     return (
@@ -77,11 +77,11 @@ class StaffList extends Component {
         </div>
         <div className="row">
           <div className="col-12 col-md-6 col-lg-4 ">
-          {this.renderStaff(this.state.selected)} 
+            {this.renderStaff(this.state.selected)}
           </div>
         </div>
       </div>
-      
+
     );
   }
 }
