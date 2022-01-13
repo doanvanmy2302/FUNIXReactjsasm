@@ -2,9 +2,10 @@
     box-sizing: border-box;
 };
 .item {
-margin
-: 13%;
+margin-bottom: 13%;
+border:black, 1px;
 };
 .change {
     padding: 20px;
+    color:blue;
 }

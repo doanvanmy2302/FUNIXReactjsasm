@@ -8,13 +8,13 @@ class StaffList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: null
+      selected: null,
     }
   }
   onStaffSelect(staff) {
     console.log("staff", staff)
     
-    this.setState({ selected: staff })
+    this.setState({ selected: staff });
   }
   renderStaff(staff) {
 
@@ -39,6 +39,24 @@ class StaffList extends Component {
         <div></div>
       );
   }
+
+  renderHeader() {
+    if(this.state.selected === null) {
+      return (
+        <div className='hiddenInfo'>
+              <CardTitle> Bấm vào nhân viên để xem thông tin.</CardTitle>
+        </div>
+      );
+    }
+      else {
+      return (
+        <div>
+            
+        </div>
+      );
+    }
+    
+  }
   render() {
     const menu = this.props.staffs.map((staff) => {
       return (<>
@@ -51,14 +69,11 @@ class StaffList extends Component {
         </>
       );
     });
-
     return (
       <div className="container">
         <div className="row">
           {menu}
-          <div className='change'>
-             <CardTitle> Bấm vào nhân viên để xem thông tin.</CardTitle>
-          </div>
+          {this.renderHeader()}
         </div>
         <div className="row">
           <div className="col-12 col-md-6 col-lg-4 ">
