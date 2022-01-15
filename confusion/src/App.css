@@ -1,11 +1,7 @@
 *{
     box-sizing: border-box;
-};
+}
 .item {
-margin-bottom: 2%;
-border:black, solid, 1px;
-};
-.hiddenInfo {
-    padding: 20px;
-    color:rgb(41, 32, 32);
+    padding-right: 5px;
+    padding-bottom: 5px;
 }
